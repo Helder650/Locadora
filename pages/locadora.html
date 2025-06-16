@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - Locadora de filmes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://imgs.search.brave.com/QDpJjN06P7aVSZET4tgnMvCfCLRJeCuTeQigP096WCE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXJ0ZXBhcmFjYW5l/Y2EuY29tLmJyL2Fy/dGUtcGFyYS1jYW5l/Y2EvbGFyZ2UvMjQ5/L2ZsYW1lbmdvLWZ1/dGVib2wuanBn');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: rgb(255, 255, 255);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+        }
+
+        .carousel-section {
+            margin: 30px 0;
+            padding: 0 20px;
+        }
+
+        .carousel-title {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 15px;
+            padding-bottom: 10px;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: #ffffff;
+            border-radius: 4px;
+        }
+
+        .movie-card {
+            flex: 0 0 200px;
+            transition: transform 0.3s;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-button {
+            background-color: #e50914;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #b20710;
+        }
+
+        @media (max-width: 768px) {
+            .movie-card {
+                flex: 0 0 150px;
+            }
+
+            .movie-card img {
+                height: 225px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Urubu do Flix</h1>
+        <p>Alugue filmes clássicos e lançamentos</p>
+    </header>
+
+    <section class="carousel-section">
+        <h2 class="carousel-title">Filmes de Ação</h2>
+        <div class="carousel-container" id="carousel1">
+            <div class="movie-card"><img src="https://res.cloudinary.com/nerd-club/image/upload/v1624974311/filmes-homem-aranha.jpg" > <h2>Homem Aranha</h2></div>
+            <div class="movie-card"><img src="https://th.bing.com/th/id/R.5519fa93f784f1888f7defb104ab2855?rik=LLpVupcngS3D7Q&pid=ImgRaw&r=0" ><h2>Homem Aranha 2</h2></div>
+            <div class="movie-card"><img src="https://www.sonypictures.com.br/sites/brazil/files/2022-03/KEY%20ART_HOMEM%20ARANHA%203.JPG" ><h2>Homem Aranha 3</h2></div>
+            <div class="movie-card"><img src="https://th.bing.com/th/id/OIP.dCeY9DF5QfgvyCqPX3RNJgHaKf?cb=iwc2&rs=1&pid=ImgDetMain" ><h2>O Espetacular Homem Aranha</h2></div>
+            <div class="movie-card"><img src="https://imgs.search.brave.com/X1F0OalqpUP0A4hNpf-_dWCogKEGtIRLOyisSBEJAuk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c29ueXBpY3R1cmVz/LmNvbS5ici9zaXRl/cy9icmF6aWwvZmls/ZXMvMjAyMi0wMy9L/RVklMjBBUlRfRVNQ/RVRBQ1VMQVIlMjBI/T01FTS1BUkFOSEEl/MjAyLkpQRw" ><h2>O Espetacular Homem Aranha 2</h2></div>
+            <div class="movie-card"><img src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/4c/Fast_%26_Furious_6.jpg/250px-Fast_%26_Furious_6.jpg" ><h2>Velozes e Furiosos 6</h2></div>
+            <div class="movie-card"><img src="https://th.bing.com/th/id/OIP.yG9BzAa3fXnLG_0Qx_snDwHaKo?rs=1&pid=ImgDetMain"  ><h2>Velozes e Furiosos: Desafio em Tokyo</h2></div>
+            <div class="movie-card"><img src="https://th.bing.com/th/id/OIP.6y6dtmlcZsyKtJ85WGOrkwHaKl?rs=1&pid=ImgDetMain"  ><h2>Gigantes de Aço</h2></div>
+            <div class="movie-card"><img src="https://m.media-amazon.com/images/I/819mNWEs4EL._AC_SL1500_.jpg" ><h2>Rocky IV</h2></div>
+            <div class="movie-card"><img src="https://th.bing.com/th/id/OIP.GgtdI1K9rYfBns1fQBgftgHaLH?w=203&h=304&c=7&r=0&o=5&pid=1.7" ><h2>Mad Max: Estrada da Furia</h2></div>
+        </div>
+        <div class="carousel-nav">
+            <button class="nav-button prev">◀</button>
+            <button class="nav-button next">▶</button>
+        </div>
+    </section>
+
+        <section class="carousel-section">
+        <h2 class="carousel-title">Lançamentos</h2>
+        <div class="carousel-container" id="carousel1">
+            <div class="movie-card"><img src="https://image.tmdb.org/t/p/original/4ZKUsFohURy72tTaB4ahfly6RAY.jpg" ><h2>Minecraft: O Filme</h2></div>
+            <div class="movie-card"><img src="https://media.fstatic.com/Y7KBWewBX-8oZQE9KtDjTTj3vi8=/322x478/smart/filters:format(webp)/media/movies/covers/2025/02/cats_YYxYxrh.png" ><h2>Karate Kid Lendas</h2></div>
+            <div class="movie-card"><img src="https://br.web.img2.acsta.net/c_310_420/img/61/c8/61c8b632a91ecabc1155bf2c95b0aeb1.jpg" ><h2>Premonição 6</h2></div>
+            <div class="movie-card"><img src="https://br.web.img2.acsta.net/c_310_420/img/a7/33/a73359e56bda3b66f78e6f6bff08caaf.png"> <h2>Missão Impossivel - O Acerto Final</h2></div>
+            <div class="movie-card"><img src="https://br.web.img2.acsta.net/c_310_420/img/dc/c1/dcc12f1886113364f8055530bf10f32a.jpg" ><h2>Invocação do Mal 4: O Último Ritual</h2></div>
+            <div class="movie-card"><img src="https://br.web.img2.acsta.net/c_310_420/img/2c/59/2c5907be8f52c06b3cba679cd43d2ed7.jpg" ><h2>Como Treinar o seu Dragão</h2></div>
+            <div class="movie-card"><img src="https://br.web.img3.acsta.net/c_310_420/img/2b/39/2b39cd5d60854936d5eb12ee0ce8eb00.jpg" ><h2>Superman</h2></div>
+            <div class="movie-card"><img src="https://br.web.img3.acsta.net/c_310_420/img/be/0c/be0c1d11aa00567314fa87299fbfee68.jpg" ><h2>Jurassic World: Recomeço</h2></div>
+            <div class="movie-card"><img src="https://br.web.img3.acsta.net/c_310_420/img/57/e0/57e051a8f6184b1a6ea14854e191817c.jpg" ><h2>Quarteto Fantástico: Primeiro Passos</h2></div>
+            <div class="movie-card"><img src="https://br.web.img3.acsta.net/c_310_420/img/7f/35/7f35670a94e530a16ee14401281032a2.jpg" ><h2>Predador: Assasino de Assasinos</h2></div>
+            <!-- Repetir até 10 s -->
+        </div>
+        <div class="carousel-nav">
+            <button class="nav-button prev">◀</button>
+            <button class="nav-button next">▶</button>
+        </div>
+    </section>
+
+        <section class="carousel-section">
+        <h2 class="carousel-title">Ficção Cientifica</h2>
+        <div class="carousel-container" id="carousel1">
+            <div class="movie-card"><img src="https://cdn.culturagenial.com/imagens/interstellar-2014-cke.jpg?class=article" ><h2>Interstellar</h2></div>
+            <div class="movie-card"><img src="https://cdn.culturagenial.com/imagens/the-matrix-cke.jpg?class=article" ><h2>Matrix</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_1267_Homem_de_Ferro_3_Poster.jpg?default=poster" ><h2>Homem de Ferro 3</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_2064_Jogos-Vorazes-Em-Chamas-Poster1.jpg?default=poster" ><h2>Jogos Vorazes: Em Chamas</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_2195_avengers1poster.jpg?default=poster" ><h2>Vingadores 2: Era de Ultron</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_2039_transformerspoter0-1.jpg?default=poster" ><h2>Transformers 4: A Era da Extinção</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_16235_venom-3.jpg?default=poster" ><h2>Venom 3: A Última Rodada</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_16533_planeta-dos-macacos-o-reinado-poster-novo.jpg?default=poster" ><h2>Planeta dos Macacos: O Reinado</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_2273_circulodefogoposter01245125.jpg?default=poster" ><h2>Circulo de Fogo</h2></div>
+            <div class="movie-card"><img src="https://cinema10.com.br/upload/filmes/filmes_2798_godzilla-poster-1.jpg?default=poster" ><h2>Godzilla</h2></div>
+        </div>
+        <div class="carousel-nav">
+            <button class="nav-button prev">◀</button>
+            <button class="nav-button next">▶</button>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.carousel-section').forEach((section, index) => {
+            const carousel = section.querySelector('.carousel-container');
+            const prevButton = section.querySelector('.prev');
+            const nextButton = section.querySelector('.next');
+
+            const scrollAmount = 300;
+
+            prevButton.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextButton.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
